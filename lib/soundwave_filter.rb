@@ -1,6 +1,6 @@
 def soundwave_filter(soundwave, lower=40, upper=1000)
 
-  raise ArgumentError, 'Soundwave contains invalid data' if soundwave.include?(nil) 
+  check_soundwave_validity(soundwave)
 
   soundwaves = []
 
@@ -14,4 +14,10 @@ def soundwave_filter(soundwave, lower=40, upper=1000)
     end
   end
   soundwaves
+end
+
+private
+
+def check_soundwave_validity(soundwave)
+  raise ArgumentError, 'Soundwave contains invalid data' if soundwave.include?(nil)
 end
