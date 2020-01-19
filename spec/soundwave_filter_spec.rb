@@ -12,7 +12,7 @@ describe '#soundwave_filter' do
       expect(soundwave_filter([1010])).to eq([1000])
     end
     it 'amends inputs above and below limits' do
-      expect(soundwave_filter([1010])).to eq([1000])
+      expect(soundwave_filter([1, 100, 1010])).to eq([40, 100, 1000])
     end
   end
 end
