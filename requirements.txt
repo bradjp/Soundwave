@@ -1,0 +1,33 @@
+A program that takes an array of soundwave integers, and returns a filtered array.
+
+It takes 3 arguments, array, lower and upper, which are limits by which the array should be filtered.
+
+eg soundwave(array, 10, 100), will return an array with only soundwaves between 10 and 100.
+
+If a soundwave is outside the limits, it should be returned as the limit it is outside.
+
+If a soundwave array contains nil, an argument error should be raised - 'Invalid input'.
+
+If any inputs are outside the limits -44,000 - +44,000, argument error - 'Soundwave outside limits'.
+
+If limits are not provided, default lower is 40, default upper is 1000.
+
+Acceptance criteria
+
+soundwave([1]) => [40] !!!
+
+soundwave([1010]) => [1000] !!!
+
+soundwave([100]) => [100] !!!
+
+soundwave([1,100,1010]) => [40,100,1010]
+
+soundwave([1,100,1010]) => [40,100,1010]
+
+soundwave([nil]) => 'Invalid input'
+
+soundwave([nil, 1]) => 'Invalid input'
+
+soundwave([-44,001, 1]) => 'Soundwave outside limits'
+
+soundwave([1, 44,001]) => 'Soundwave outside limits'
