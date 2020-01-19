@@ -15,4 +15,12 @@ describe '#soundwave_filter' do
       expect(soundwave_filter([1, 100, 1010])).to eq([40, 100, 1000])
     end
   end
+  context 'inputs contain nil' do
+    it 'throws an error when input is nil' do
+      expect{ soundwave_filter([nil]) }.to raise_error('Soundwave contains invalid data')
+    end
+    it 'throws an error when input contains nil' do
+      expect{ soundwave_filter([1, nil]) }.to raise_error('Soundwave contains invalid data')
+    end
+  end
 end

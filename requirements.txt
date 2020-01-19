@@ -22,11 +22,9 @@ soundwave([100]) => [100] !!!
 
 soundwave([1,100,1010]) => [40,100,1010] !!!
 
-soundwave([1,100,1010]) => [40,100,1010]
+soundwave([nil]) => 'Soundwave contains invalid data' !!!
 
-soundwave([nil]) => 'Invalid input'
-
-soundwave([nil, 1]) => 'Invalid input'
+soundwave([nil, 1]) => 'Soundwave contains invalid data' !!!
 
 soundwave([-44,001, 1]) => 'Soundwave outside limits'
 
