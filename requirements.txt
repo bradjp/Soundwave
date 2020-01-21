@@ -26,6 +26,6 @@ soundwave([nil]) => 'Soundwave contains invalid data' !!!
 
 soundwave([nil, 1]) => 'Soundwave contains invalid data' !!!
 
-soundwave([-44,001, 1]) => 'Soundwave outside limits'
+soundwave([-44,001]) => 'Soundwave outside limits' !!!
 
-soundwave([1, 44,001]) => 'Soundwave outside limits'
+soundwave([44,001]) => 'Soundwave outside limits' !!!
