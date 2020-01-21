@@ -23,7 +23,7 @@ describe '#soundwave_filter' do
       expect{ soundwave_filter([1, nil]) }.to raise_error('Soundwave contains invalid data')
     end
     it 'throws an error when inputs are outside defined limits' do
-      expect{ soundwave_filter([-44,001, 1]) }.to raise_error('Soundwave outside limits.')
+      expect{ soundwave_filter([-44001]) }.to raise_error('Soundwave outside limits.')
     end
   end
 end
