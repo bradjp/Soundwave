@@ -1,29 +1,28 @@
 def soundwave_filter(soundwave, lower=40, upper=1000)
 
-  check_soundwave_validity(soundwave)
+  check_validity(soundwave)
 
-  x = []
+  check_limits(soundwave)
 
-  soundwave.map { |wave| x << wave if wave < -44000 || wave > 44000 }
 
-  raise ArgumentError, 'Soundwave outside limits.' if !x.empty?
-
-  soundwaves = []
-
-  soundwave.each do |wave|
-    if wave < lower
-      soundwaves << lower
-    elsif wave > upper
-      soundwaves << upper
-    else
-      soundwaves << wave
-    end
+  soundwave.map! do |wave|
+    wave < lower ? lower : wave > upper ? upper : wave
   end
-  soundwaves
+
+  soundwave
+
 end
 
 private
 
-def check_soundwave_validity(soundwave)
+def check_validity(soundwave)
   raise ArgumentError, 'Soundwave contains invalid data' if soundwave.include?(nil)
+end
+
+def check_limits(soundwave)
+  filtered_array = []
+
+  soundwave.map { |wave| filtered_array << wave if wave < -44000 || wave > 44000 }
+
+  raise ArgumentError, 'Soundwave outside limits.' if !filtered_array.empty?
 end
